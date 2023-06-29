@@ -33,8 +33,7 @@ public class Main {
 			System.out.println("Stack is Empty");
 			return;
 		}
-		while(temp != this.top) {
-			System.out.println("    "+temp.getData());
+		while(temp.getNext() != null) {
 			temp = temp.getNext();
 		}
 		System.out.println("    "+temp.getData());
@@ -66,7 +65,7 @@ public class Main {
 			return temp.getData();
 		}
 		String popedItem = temp.getData(); 
-		prev.setNext(prev);
+		prev.setNext(null);
 		this.top = prev;
 		return popedItem;
 	}
