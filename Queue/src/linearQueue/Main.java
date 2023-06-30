@@ -30,6 +30,15 @@ public class Main {
 		this.rear = newNode;
 	}
 	
+	private SingleLinkedListNode<Integer> peek() {
+		// TODO Auto-generated method stub
+		if(this.front == null && this.rear == null) {
+			System.out.println("Queue is Empty");
+			return null;
+		}
+		return this.front;
+	}
+	
 	private void display() {
 		// TODO Auto-generated method stub
 		if( this.rear ==null && this.front == null) { 
@@ -66,6 +75,7 @@ public class Main {
 		obj.enqueue(1);
 		obj.enqueue(2);
 		obj.enqueue(3);
+		System.out.println("peek : "+obj.peek().getData());
 		obj.display();
 		obj.dequeue();
 		obj.dequeue();

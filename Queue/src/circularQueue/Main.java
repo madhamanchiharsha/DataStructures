@@ -68,6 +68,15 @@ public class Main {
 		System.out.println(temp.getData());
 	}
 	
+	private SingleLinkedListNode<Integer> peek() {
+		// TODO Auto-generated method stub
+		if(this.front == null && this.rear == null) {
+			System.out.println("Queue is Empty");
+			return null;
+		}
+		return this.front;
+	}
+	
 	/**
 	 * @param args
 	 */
@@ -80,8 +89,11 @@ public class Main {
 		obj.enqueue(3);
 		obj.enqueue(4);
 		obj.display();
+		System.out.println("peek : "+obj.peek().getData());
 		obj.dequeue();
 		obj.dequeue();
+		obj.display();
+		System.out.println("peek : "+obj.peek().getData());
 		obj.dequeue();
 		obj.dequeue();
 		obj.dequeue();
