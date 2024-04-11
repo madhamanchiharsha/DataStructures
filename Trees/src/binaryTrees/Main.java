@@ -3,9 +3,11 @@
  */
 package binaryTrees;
 
+import java.util.ArrayDeque;
 import java.util.LinkedList;
+import java.util.PriorityQueue;
 import java.util.Queue;
-
+import java.util.concurrent.DelayQueue;
 
 import model.BinaryTreeModel;
 
@@ -179,9 +181,24 @@ public class Main {
 				}
 			}
 		}
-		
 
 	}
+	
+    public void printBFS(BinaryTreeModel<Integer> root) {
+    	Queue<BinaryTreeModel<Integer>> q = new LinkedList<BinaryTreeModel<Integer>>();
+    	q.add(root);
+    	if(root == null) return;
+    	while(! q.isEmpty()) {
+    		System.out.print(" " +q.peek().getData()+" ");
+    		if(q.peek().getLeft() !=null) {
+    			q.add(q.peek().getLeft());
+    		}
+    		if(q.peek().getRight() != null) {
+    			q.add(q.peek().getRight());
+    		}
+    		q.remove();
+    	}
+	}	
 
 	
 	/**
@@ -215,6 +232,8 @@ public class Main {
 	    obj.printPostOrder(root);
 	    System.out.println();
 	    System.out.println("Postorder traversel done");
+	    System.out.println("BFS");
+	    obj.printBFS(root);
 	    
 	    
 	}
